@@ -1,0 +1,26 @@
+# _config.yml
+# GitHub Pages / Jekyll configuration
+
+title: "OL Chiki IME"
+description: "Professional Ol Chiki Input Method Editor"
+baseurl: "" # leave empty if hosting at user.github.io, else set like "/repo-name"
+url: "https://yourusername.github.io"
+
+theme: minima   # optional Jekyll theme (can remove if not using themes)
+
+# Exclude files you don’t want GitHub Pages to publish
+exclude:
+  - index.html
+  - "Ol Chiki IME.html"
+  - "IMG_7434(Edited2).jpg"
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# Pretty URLs (removes .html extensions in URLs)
+permalink: pretty
+
+# Optional: enable relative links
+relative_links:
+  enabled: true
+  collections: true
