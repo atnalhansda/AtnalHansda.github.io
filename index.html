@@ -9,7 +9,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
     body {
         background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-        color: #fff; line-height: 1.6; scroll-behavior: smooth;
+        color: #fff; line-height: 1.6;
     }
 
     /* Header */
@@ -27,6 +27,7 @@
     nav a {
         color: #fff; margin-left: 20px; text-decoration: none; font-size: 1rem;
         transition: 0.3s; padding: 6px 14px; border-radius: 20px;
+        cursor: pointer;
     }
     nav a:hover {
         background: rgba(255,106,0,0.2); color: #ff6a00;
@@ -146,10 +147,10 @@
 <header>
     <h1>Atnal Hansda</h1>
     <nav>
-        <a href="#about">About</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#software">Software</a>
-        <a href="#contact">Contact</a>
+        <a onclick="scrollToSection('about')">About</a>
+        <a onclick="scrollToSection('portfolio')">Portfolio</a>
+        <a onclick="scrollToSection('software')">Software</a>
+        <a onclick="scrollToSection('contact')">Contact</a>
     </nav>
 </header>
 
@@ -158,7 +159,7 @@
     <div class="hero-content">
         <h2>Hi, I'm Atnal Hansda</h2>
         <p>Freelancer | Developer | 3D Artist</p>
-        <a href="#software" class="btn">Explore My Work</a>
+        <a href="javascript:void(0)" onclick="scrollToSection('software')" class="btn">Explore My Work</a>
     </div>
 </div>
 
@@ -247,6 +248,15 @@
     };
     window.addEventListener("scroll", revealOnScroll);
     window.addEventListener("load", revealOnScroll);
+
+    // Custom smooth scroll without hash in URL
+    function scrollToSection(id) {
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+            history.replaceState(null, null, " "); // remove hash
+        }
+    }
 </script>
 </body>
 </html>
