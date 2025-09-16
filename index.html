@@ -60,6 +60,21 @@
         align-items: center;
         text-align: center;
         padding: 0 20px;
+        background: url("IMG_7434(Edited2).jpg") no-repeat center center/cover;
+        position: relative;
+    }
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.6);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
     }
 
     .hero h2 {
@@ -217,29 +232,14 @@
         height: 20px;
     }
 
-    .download-btn.github {
-        background: #24292e;
-    }
-    .download-btn.github:hover {
-        background: #000;
-        transform: scale(1.05);
-    }
+    .download-btn.github { background: #24292e; }
+    .download-btn.github:hover { background: #000; transform: scale(1.05); }
 
-    .download-btn.mediafire {
-        background: #1685f8;
-    }
-    .download-btn.mediafire:hover {
-        background: #0f69c4;
-        transform: scale(1.05);
-    }
+    .download-btn.mediafire { background: #1685f8; }
+    .download-btn.mediafire:hover { background: #0f69c4; transform: scale(1.05); }
 
-    .download-btn.gdrive {
-        background: #0f9d58;
-    }
-    .download-btn.gdrive:hover {
-        background: #0b6d3d;
-        transform: scale(1.05);
-    }
+    .download-btn.gdrive { background: #0f9d58; }
+    .download-btn.gdrive:hover { background: #0b6d3d; transform: scale(1.05); }
 
     /* Footer */
     footer {
@@ -263,11 +263,13 @@
     </nav>
 </header>
 
-<!-- Hero -->
+<!-- Hero with Image Background -->
 <div class="hero">
-    <h2>Hi, I'm Atnal Hansda</h2>
-    <p>Freelancer | Developer | 3D Artist</p>
-    <a href="#portfolio" class="btn">Explore My Work</a>
+    <div class="hero-content">
+        <h2>Hi, I'm Atnal Hansda</h2>
+        <p>Freelancer | Developer | 3D Artist</p>
+        <a href="#portfolio" class="btn">Explore My Work</a>
+    </div>
 </div>
 
 <!-- About -->
@@ -350,7 +352,7 @@
 <section id="contact">
     <h2>Contact Me</h2>
     <p>Email: 
-        <a href="mailto:atnalhansda@gmail.com" style="color:#ff6a00;">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=atnalhansda@gmail.com" style="color:#ff6a00;">
             atnalhansda@gmail.com
         </a>
     </p>
@@ -373,18 +375,16 @@
     let index = 0;
 
     function slidePortfolio() {
-        const cardWidth = cards[0].offsetWidth + 20; // card width + margin
+        const cardWidth = cards[0].offsetWidth + 20;
         const visibleCards = window.innerWidth <= 768 ? 1 : 3;
         index++;
-
         if (index > cards.length - visibleCards) {
-            index = 0; // loop back
+            index = 0;
         }
-
         track.style.transform = `translateX(-${index * cardWidth}px)`;
     }
 
-    setInterval(slidePortfolio, 3000); // Auto slide every 3 seconds
+    setInterval(slidePortfolio, 3000);
 
     window.addEventListener('resize', () => {
         index = 0;
