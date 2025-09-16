@@ -12,7 +12,7 @@ theme: minima   # optional Jekyll theme (can remove if not using themes)
 exclude:
   - index.html
   - "Ol Chiki IME.html"
-  - "IMG_7434(Edited2).jpg"
+  - "IMG_7434(Edited2).png"
   - README.md
   - Gemfile
   - Gemfile.lock
